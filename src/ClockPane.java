@@ -72,20 +72,25 @@ public class ClockPane extends Pane {
 		Text t3 = new Text(centerX+clockRadius-10,centerY+3,"3");
 		Text t4 = new Text(centerX-3,centerY+clockRadius-3,"6");
 		
-		double sLength = clockRadius*0.8;
+                // sLength is the length of the second hand
+		double sLength = 
 		// You need to calculate the X,Y values of the endpoint
 		double secondX = 
 		double secondY = 
 		Line sLine = new Line(centerX,centerY,secondX,secondY);
 		sLine.setStroke(); // adjust your own color here
 		
-		double mLength = clockRadius*0.65;
+                // mLength is the length of the minute hand
+		double mLength = 
+		// You need to calculate the X,Y values of the endpoint
 		double minuteX = 
 		double minuteY = 
 		Line mLine = new Line(centerX,centerY,minuteX,minuteY);
 		mLine.setStroke(); // adjust your own color here
 		
-		double hLength = clockRadius*0.5;
+                // hLength is the length of the hour hand
+		double hLength = 
+		// You need to calculate the X,Y values of the endpoint
 		double hourX = 
 		double hourY = 
 		Line hLine = new Line(centerX,centerY,hourX,hourY);
