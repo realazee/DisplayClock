@@ -58,9 +58,9 @@ public class ClockPane extends Pane {
 	
 	private void paintClock() {
 		// Code the clock based upon getWidth(), getHeight();
-		double clockRadius = ;
-		double centerX = ;
-		double centerY = ;
+		double clockRadius = 2*getWidth()/5;
+		double centerX = getWidth()/2;
+		double centerY = getHeight()/2;
 		
 		Circle circle = new Circle(centerX, centerY, clockRadius);
 		circle.setFill(Color.WHITE);
@@ -73,28 +73,28 @@ public class ClockPane extends Pane {
 		Text t4 = new Text(centerX-3,centerY+clockRadius-3,"6");
 		
                 // sLength is the length of the second hand
-		double sLength = 
+		double sLength = clockRadius*0.9;
 		// You need to calculate the X,Y values of the endpoint
-		double secondX = 
-		double secondY = 
+		double secondX = centerX +sLength * Math.sin((2* Math.PI/60)*getSecond()); 
+		double secondY = centerY +sLength * Math.cos((2* Math.PI/60)*getSecond()); 
 		Line sLine = new Line(centerX,centerY,secondX,secondY);
-		sLine.setStroke(); // adjust your own color here
+		sLine.setStroke(Color.BLACK); // adjust your own color here
 		
                 // mLength is the length of the minute hand
-		double mLength = 
+		double mLength = clockRadius*0.7;
 		// You need to calculate the X,Y values of the endpoint
-		double minuteX = 
-		double minuteY = 
+		double minuteX = centerX+mLength* Math.sin((2*Math.PI/60 * 2)*getMinute());
+		double minuteY = centerY+mLength* Math.cos((2*Math.PI/60 * 2)*getMinute());
 		Line mLine = new Line(centerX,centerY,minuteX,minuteY);
-		mLine.setStroke(); // adjust your own color here
+		mLine.setStroke(Color.BLACK); // adjust your own color here
 		
                 // hLength is the length of the hour hand
-		double hLength = 
+		double hLength = clockRadius*0.5;
 		// You need to calculate the X,Y values of the endpoint
-		double hourX = 
-		double hourY = 
+		double hourX = centerX+hLength*Math.sin((minute/60 + hour/12) * (Math.PI /12 *2));
+		double hourY = centerY+hLength*Math.cos((minute/60 + hour/12) * (Math.PI /12 *2));
 		Line hLine = new Line(centerX,centerY,hourX,hourY);
-		hLine.setStroke(); // adjust your own color here...
+		hLine.setStroke(Color.BLACK); // adjust your own color here...
 		
 		getChildren().clear();
 		getChildren().addAll(circle,t1,t2,t3,t4,sLine,mLine,hLine);
